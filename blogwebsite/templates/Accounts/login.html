@@ -1,0 +1,40 @@
+{%extends "base.html"%}
+
+
+{%block content%}
+         {%if form.errors %}
+         <p> Invalid credential, please enter the correct username or password</p>
+         {%endif %}
+         {%if next%}
+              {%if user.is_authenticated %}
+                 <p> You don't have access to this page,please login with an account that does.</p>
+              {%else %}
+                 <p> Login to access this page</p>
+              {%endif %}
+         {%endif %}
+    
+
+<div class="row tm-row tm-mb-120">
+    <div class="col-12"></div>
+</div>
+<form action="" method="post">
+    {%csrf_token %}
+    {{form.as_p}}
+    <div class="from-group rpw text-right">
+        <div class="col-4">
+            <button class="tm-btn tm-btn-primary tm-btn-small" type="submit">Login</button>
+            <input type="hidden" name="next" value="{{next}}">
+        </div>
+    </div>
+</form>
+    <a href="#">Reset password</a>
+
+    
+        
+    </div>
+    <!-- <input type="Submit" value="Login">
+    <input type="hidden" name="next" value="{{next}}"> -->
+
+
+
+{%endblock content%}

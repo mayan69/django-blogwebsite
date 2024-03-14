@@ -1,0 +1,12 @@
+{%extends "base.html"%}
+
+
+{%block content%}
+<form action="{%url 'user-logout'%}" method="post">
+ 
+    {%csrf_token %}
+    <button type="submit" style="padding: 5px,10px; border: 1px solid #0000;text-align: center; box-sizing: border-box;"> Logout </button>
+</form>
+
+
+{%endblock content%}
