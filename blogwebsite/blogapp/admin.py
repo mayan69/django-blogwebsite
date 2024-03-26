@@ -3,7 +3,7 @@ from django.contrib import admin
 # Register your models here.
 
 from django.contrib import admin
-from .models import BlogPost,Category, Tags
+from .models import BlogPost,Category, Tags , CommentPost
 # Register your models here.
 
 
@@ -15,6 +15,7 @@ class MainAppAdmin(admin.ModelAdmin):
 admin.site.register(BlogPost,  MainAppAdmin)
 admin.site.register(Category)
 admin.site.register(Tags)
+admin.site.register(CommentPost)
 
 admin.site.site_header='Django Blog Website Panel'
 admin.site.site_title= "Site portal"

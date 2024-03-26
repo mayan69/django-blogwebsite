@@ -29,3 +29,27 @@ class BlogPost(models.Model):
 
     def __str__(self) -> str:
         return f'{self.title}'
+
+
+
+
+
+# class Post(models.Model):
+#     title = models.CharField(max_length=100)
+#     content = models.TextField()
+    
+
+#     def __str__(self) -> str:
+#         return f"{self.title}"
+   
+
+class CommentPost(models.Model):
+    name=models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
+    comment=models.TextField()
+    blog=models.ForeignKey(BlogPost,on_delete=models.CASCADE,default=1)
+    timestamp=models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return f"{self.name}-comment" 
+    
